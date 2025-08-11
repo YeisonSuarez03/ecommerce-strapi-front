@@ -9,9 +9,10 @@ interface QuotationStep2Props {
   onValidationChange?: (isValid: boolean) => void
 }
 
-const ID_CAMARAS_CATEGORY = "49"
 
 export function QuotationStep2({ onValidationChange }: QuotationStep2Props) {
+  const ID_CAMARAS_CATEGORY = process.env.NEXT_PUBLIC_CATEGORY_ID || "21"
+
   const { data: categoriesResponse, isLoading, error, refetch } = useCategories({
     id: ID_CAMARAS_CATEGORY,
     getImage: "true"
