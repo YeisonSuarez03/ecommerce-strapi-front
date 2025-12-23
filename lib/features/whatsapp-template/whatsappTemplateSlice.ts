@@ -19,7 +19,7 @@ const initialState: WhatsappTemplateState = {
 export const fetchWhatsappTemplate = createAsyncThunk(
   "whatsappTemplate/fetchTemplate",
   async () => {
-    const response = await fetch("/api/whatsapp-template");
+    const response = await fetch("/api/whatsapp-template", {cache: 'no-store'});
     if (!response.ok) {
       throw new Error("Failed to fetch WhatsApp template");
     }
